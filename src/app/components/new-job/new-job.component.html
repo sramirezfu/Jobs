@@ -16,11 +16,15 @@
                 <div class="form-group pt-3">
                     <label for="title">Nombre</label>
                     <input type="text" name="name" [(ngModel)]="job.name" class="form-control" required minlength="5" pattern="[a-zA-Z\s]+" placeholder="Desarollo web">                                           
-                </div>    
+                </div>   
                 <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Example textarea</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" name="description" #description="ngModel" id="description" [(ngModel)]="job.description" type="text" class="form-control" pattern="[a-zA-Z\s]+" rows="3"></textarea>
+                </div> 
+                <!-- <div class="form-group">
                     <label for="description">Descripción</label>                                       
                     <textarea [froalaEditor] name="description" #description="ngModel" id="description" [(ngModel)]="job.description" type="text" class="form-control" pattern="[a-zA-Z\s]+"></textarea>               
-                </div>                     
+                </div>                      -->
                 <div class="form-group">
                     <label for="user">Usuario</label>  
                     <input type="text" name="user" [(ngModel)]="job.user" placeholder="Arturo Rodriguez" class="form-control" minlength="5" pattern="[a-zA-Z\s]+">                        

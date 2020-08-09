@@ -3,7 +3,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms'; 
 
 // Import plugins
-import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
+// import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 import { AngularFileUploaderModule } from "angular-file-uploader";
 import { AvatarModule } from 'ngx-avatar';
 
@@ -51,8 +51,8 @@ import { SearchJobsPipe } from './pipes/search-jobs.pipe';
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    FroalaEditorModule.forRoot(),
-    FroalaViewModule.forRoot(),
+    // FroalaEditorModule.forRoot(),
+    // FroalaViewModule.forRoot(),
     AngularFileUploaderModule,
     MatProgressSpinnerModule,
     MatFormFieldModule,
