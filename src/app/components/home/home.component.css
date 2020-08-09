@@ -1,5 +1,6 @@
 .card-body{
     min-height: 295px;
+    box-shadow: none;
 }
 .time-job{
     font-size: 11px;
