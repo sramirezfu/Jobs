@@ -36,6 +36,7 @@ body{
 
 .card{
     border: none !important;
+    border-radius: 15px !important;
 }
 .content-flex{
     display: flex;
