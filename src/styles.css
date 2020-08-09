@@ -1,1 +1,220 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;700;800&display=swap');
+html, body { height: 100%; }
+
+body{
+    font-family: 'Nunito', sans-serif !important;
+    background-color: #f3f5fa !important;
+}
+
+
+/********* Frames **********/
+
+.frame{
+    box-shadow: 0 3px 10px 0 rgba(0,0,0,.3);
+    border-radius: 15px !important;
+}
+
+.frame-form{
+    box-shadow: 0 3px 10px 0 rgba(0,0,0,.3);
+    border-radius: 15px !important;
+}
+
+/******** Header  *******/
+
+.logo-page{
+    font-size: 26px !important;
+    padding-bottom: 0 !important;
+}
+.date{
+    font-size: 13px;
+    font-weight: 100;
+}
+
+/*******  Card *******/
+
+.card{
+    border: none !important;
+}
+.content-flex{
+    display: flex;
+}
+.status-job{
+    border-bottom: 2px solid #f0f3fe;   
+    display: flex;
+}
+.content-detail-job{
+    padding-left: 14px;
+    border-left: 2px solid #00c382;
+}
+.content-actions-card{
+    position: absolute;
+    left: 63%;
+    top: 52%;
+    background-color: white;
+    padding: 10px;
+    border-radius: 12px;
+    -webkit-box-shadow: -2px 20px 39px -1px rgba(175,188,214,1);
+    -moz-box-shadow: -2px 20px 39px -1px rgba(175,188,214,1);
+    box-shadow: -2px 6px 15px -1px rgba(175,188,214,1);
+    display: none;
+    font-size: 18px;
+}
+.activeActions{
+    display: block;
+}
+.card-colums{
+    margin-top: 5rem;
+}
+@media only screen and (max-width: 722px) { 
+    .card-columns{
+        margin-top: 1rem !important;
+    }
+}
+.content-cards{
+    margin-top: 5rem;   
+}
+@media only screen and (max-width: 722px) { 
+    .content-cards{
+        margin-top: 10px !important;
+    }    
+}
+
+/******* Background ******/
+
+.bg-purple{
+    background-color: #3c1990;
+}
+.bg-grey{
+    background-color: #f6f6f6;
+}
+.bg-blue-light{
+    background-color: #f3f5fa;
+}
+
+/******* BTN ********/
+
+.btn-blue {
+	box-shadow:inset 0px 1px 0px 0px #8193e0;
+	background:linear-gradient(to bottom, #405097 5%, #405097 100%);
+	background-color:#405097;
+	border-radius:9px !important;
+	border:1px solid #293258;
+	color:#ffffff !important;
+	padding:6px 24px;
+	text-shadow:0px 1px 0px #293258;
+}
+.btn-blue:hover {
+	background:linear-gradient(to bottom, #405097 5%, #293258 100%);
+	background-color:#405097;
+}
+.btn-blue:active {
+	position:relative;
+	top:1px;
+}
+
+.btn-submit-form{
+    letter-spacing: 0.2rem;
+}
+.btns:hover{
+    text-decoration: none;
+}
+
+/******* Links **********/
+
+/******* text *********/
+
+.text-grey{
+    color: #444 !important;
+}
+.text-grey-light{
+    color: #727a99;
+}
+.text-grey-light-cla{
+    color:  #b9bcc4;;
+}
+.text-gree-black{
+    color: #232323
+}
+.text-green{
+    color: #00c382;    
+}
+.text-reed{
+    color: #dd3e44;
+}
+.text-purple{
+  color: #343f6c;  
+}
+.text-purple-light{
+    color: #405097 !important; 
+}
+
+
+/********  Borders  ********/
+
+.border-dotted{
+    border: 3px dotted #afa7a7;
+    border-radius: 15px;
+}
+.border-radius-top{
+    border-radius: 15px 15px 0 0;
+}
+
+/***** spinners ******/
+.spinner-load{
+    text-align: -moz-center;
+    text-align: -webkit-center !important;
+    text-align: center;    
+}
+
+/******* images *******/
+.avatar-mask-list{
+    width: 35px;
+    height: 35px;
+    border-radius: 900px;
+    overflow: hidden;
+    margin-right: 5px;
+   
+}
+.content-info-user{
+    font-size: 12px;
+}
+.content-info-user .px-1{
+    padding-top: 6px;
+}
+
+/******** Font **********/
+.number-jobs{
+    font-size: 18px;
+    padding-left: 10px;
+}
+
+/****** Icons ********/
+
+.fa-clock{
+    font-size: 14px;
+    color: #727a99;
+}
+
+/******** Material *********/
+.mat-form-field-underline{
+    background-color:#405097 !important;
+}
+.modal-body div{
+    font-size: 20px;
+}
+.mat-form-field-suffix:focus, .mat-datepicker-toggle:focus, .mat-focus-indicator:focus{
+    outline:transparent !important;
+}
+.mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: rgb(255 255 255);
+}
+
+.avatar-container{
+    margin: 0 auto !important;
+}
+.text-grey-light-cla:hover{
+    color: #7f8c8d;
+    text-decoration: none;
+}

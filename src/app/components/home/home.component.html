@@ -1,0 +1,71 @@
+<div class="container spinner-load my-5 py-3" *ngIf="!jobs">
+    <mat-spinner></mat-spinner>
+    Cargando....
+</div>
+<section class="container content-cards pt-3" *ngIf="jobs">
+    <div class="">
+        <h3 class="mb-3 font-weight-bold">Tareas <span class="text-purple-light number-jobs">({{numberJobs}} asignadas)</span></h3>
+        <mat-form-field class="pb-2 content-search">
+            <mat-label>Buscar tarea</mat-label>
+            <input matInput autocomplete="off" type="text" name="name" [(ngModel)]="filterProduct">
+            <button mat-button class="button-search" *ngIf="filterProduct" matSuffix mat-icon-button aria-label="Clear" (click)="filterProduct=''">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+    </div>        
+    <div class="card-columns">
+        <div class="card mb-4" *ngFor="let job of jobs |searchJobs:filterProduct">                                          
+            <div class="card-body content-info frame">
+                <div class="status-job content-flex"> 
+                    <div class="col-4 px-0">
+                        <h5 class="mb-0 pt-2 font-weight-bold pb-2" [ngClass]="job.status == 'Activa' ? 'text-green' : 'text-reed'">{{job.status}}</h5>
+                    </div>  
+                    <div class="col-8 text-right mb-2 px-0" *ngIf="job.status == 'Activa'">
+                        <a routerLink="/editar/tarea/{{job.id}}" class="btn btn-blue py-1">Agregar tiempo</a>                                                                                  
+                    </div>                                                                                                                 
+                </div>       
+                <div class="mt-3 content-flex content-info-user">
+                    <ngx-avatar size="30" name="{{job.user}}"></ngx-avatar>                    
+                    <div class="col-5 px-1">
+                        <span>{{job.user}}</span>
+                    </div>
+                    <div class="col-6 px-1" *ngIf="job.status == 'Activa'">
+                        <i class="far fa-clock mr-1"></i><span class="text-purple time-job">Tiempo restante: {{calculateHours(job.dateEnd)}}hrs</span>
+                    </div> 
+                </div>       
+                <div class="mt-3 content-detail-job">   
+                    <div class="content-flex">
+                        <h5 class="card-title col-11 mb-2 text-purple px-0 font-weight-bold">{{ job.name }}</h5>       
+                        <a role="button" (click)="openActions(job.id)" id="{{'actions-'+job.id}}" class="menu-actions-card col-1 text-grey-light-cla px-0 text-right"><i class="fas fa-ellipsis-v"></i></a>                                                       
+                    </div> 
+                    <p class="card-text text-grey-light text-justify pr-3" [innerHTML]="job.description.substring(-1,125)">{{job.description}}</p>      
+                    <div class="content-actions-card" id="{{'actions-contents-'+job.id}}">
+                        <div class="text-purple-light">
+                            <a role="button" routerLink="/detalle/tarea/{{job.id}}" class="text-purple-light"><i class="fas fa-eye mr-2"></i>Ver tarea</a>   
+                        </div>                          
+                        <div class="text-grey-light-cla">
+                            <a role="button" data-toggle="modal"  [attr.data-target]="'#mymodal'+job.id" class="pl-1 text-grey-light-cla"><i class="fas fa-trash mr-2"></i>Borrar</a>            
+                        </div>    
+                    </div>                                                  
+                </div>                                                                                              
+            </div>   
+            <div class="modal fade" id="{{'mymodal'+job.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">                                                                                 
+                        <div class="modal-body py-4">    
+                            <h5 class="text-purple  text-center font-weight-bold">¿Desea eliminar {{job.name}}?</h5> 
+                            <div class="text-center mt-4">
+                                <a role="button" (click)="deletePost(job.id)" data-dismiss="modal" class="text-grey-light-cla mr-4 pointer"><i class="fas fa-trash mr-1 text-grey-light-cla"></i>Borrar</a>                            
+                                <a role="button" class="text-purple-light btns" data-dismiss="modal"><i class="fas fa-window-close  mr-1 text-purple-light"></i>Cancelar</a>                                
+                            </div>                                                                                   
+                        </div>                        
+                    </div>
+                </div>
+            </div>      
+        </div>   
+        <a *ngIf="identity" class="button-add btn btn-blue" routerLink="/crear/tarea">         
+            <div class="text-white"><i class="fas fa-plus"></i></div>            
+        </a>
+    </div>    
+</section>
+  

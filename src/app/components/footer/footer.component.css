@@ -1,0 +1,19 @@
+.content-footer-red{
+    border-top: 1px solid #dddddd;
+    height: 200px;
+    margin-top: 80px;
+}
+.content-foot-copy{
+    border-top: 1px solid #dddddd;
+    height: 100px;
+    background-color: #232323;
+    color: #969696 !important;
+    line-height: 67px;
+    
+}
+.content-foot-copy a{
+    color: #969696 !important;
+}
+.content-social a{
+    color: #232323;
+}

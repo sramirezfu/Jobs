@@ -1,0 +1,47 @@
+<section class="mt-5 container">       
+    <div class="col-md-8 col-sm-10 bg-grey p-4 mx-auto frame">     
+        <div class="alert alert-success" *ngIf="status == 'success' && is_new == true">
+            Articulo creado correctamente.
+        </div>         
+        <form #jobCreate="ngForm" (submit)="onSubmit(jobCreate)" ngNativeValidate>
+            <fieldset>                
+                <legend class="font-weight-bold mb-5" *ngIf="is_new == true; else editJob  ">Crea una nueva tarea</legend>
+                <ng-template #editJob>
+                    <legend class="font-weight-bold mb-5">Modifica la tarea</legend>
+                </ng-template>                
+                <div class="form-group">
+                    <label for="materia">Materia</label>
+                    <input type="text" name="materia" [(ngModel)]="job.materia" class="form-control" required minlength="5" pattern="[a-zA-Z\s]+" placeholder="Programación">                                             
+                </div>
+                <div class="form-group pt-3">
+                    <label for="title">Nombre</label>
+                    <input type="text" name="name" [(ngModel)]="job.name" class="form-control" required minlength="5" pattern="[a-zA-Z\s]+" placeholder="Desarollo web">                                           
+                </div>    
+                <div class="form-group">
+                    <label for="description">Descripción</label>                                       
+                    <textarea [froalaEditor] name="description" #description="ngModel" id="description" [(ngModel)]="job.description" type="text" class="form-control" pattern="[a-zA-Z\s]+"></textarea>               
+                </div>                     
+                <div class="form-group">
+                    <label for="user">Usuario</label>  
+                    <input type="text" name="user" [(ngModel)]="job.user" placeholder="Arturo Rodriguez" class="form-control" minlength="5" pattern="[a-zA-Z\s]+">                        
+                </div>              
+                <div class="form-group">
+                    <label for="status">Estado</label>
+                    <select class="form-control bg-gray" name="status" [(ngModel)]="job.status">                                                                                                           
+                        <option  value="Activa">Activa</option>
+                        <option  value="Finalizada">Finalizada</option>
+                    </select>                   
+                </div>             
+                <mat-form-field appearance="fill"> 
+                    <mat-label>Fecha de entrega</mat-label>
+                    <input matInput [min]="minDate" name="dateEnd" [(ngModel)]="job.dateEnd" [matDatepicker]="picker">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>                                   
+                <div class="text-center px-5 pt-4">
+                    <input type="submit" class="btn btn-submit-form btn-blue text-white w-100" value="Guardar">
+                </div>                    
+            </fieldset>
+        </form>
+    </div>
+</section>

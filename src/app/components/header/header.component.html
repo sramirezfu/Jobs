@@ -1,0 +1,39 @@
+<section class="bg-white">
+    <div class="container content-nav pt-3">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="pr-4">
+                <a class="navbar-brand font-weight-bold logo-page" routerLink="/">To do ist</a>
+                <span class="d-block  date text-grey-light text-capitalize">{{day}}</span>
+            </div>                                                    
+            <div class="navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active d-none d-sm-none d-md-block">
+                        <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active" *ngIf="!identity">
+                        <a class="nav-link" routerLink="/login">Login</a>
+                    </li>                                      
+                </ul>                    
+                <ul class="navbar-nav ml-auto" *ngIf="identity">
+                    <li class="nav-item" *ngIf="identity.image">
+                        <div class="avatar-mask">
+                            <img src="assets/images/user/{{identity.image}}" alt="img user">
+                        </div>
+                    </li> 
+                    <li class="nav-item" *ngIf="!identity.image">
+                        <ngx-avatar size="30" name="{{identity.name}}"></ngx-avatar>
+                    </li> 
+                    <li class="nav-item dropdown">    
+                        <a class="nav-link dropdown-toggle name-user" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i *ngIf="!identity.image" class="fas fa-user-tie mr-1"></i><span>{{ identity.name + ' ' + identity.surname}}</span>
+                        </a>                                              
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" routerLink="/crear/tarea">Crear Tarea</a>                                                       
+                            <a class="dropdown-item" routerLink="/logout/1">Cerrar sesión</a>
+                        </div>
+                    </li>    
+                </ul>     
+            </div>
+        </nav>
+    </div>
+</section>

@@ -1,0 +1,24 @@
+.detail-job-content{
+    margin-top: 80px;
+}
+.content-user{
+    padding-top: 3em;
+}
+.status-job-detail{
+    font-size: 24px;
+}
+.job-actions-detail{
+    font-size: 17px;
+}
+
+@media only screen and (max-width: 722px) { 
+    .bottoms-detail-job{
+        text-align: center !important;
+    }    
+}
+@media only screen and (min-width: 768px) and (max-width: 1090px){
+    .job-actions-detail div{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}

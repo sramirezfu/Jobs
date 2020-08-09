@@ -1,0 +1,45 @@
+.card-body{
+    min-height: 295px;
+}
+.time-job{
+    font-size: 11px;
+}
+.button-search{
+    background-color: transparent;
+    border: none;
+}
+@media only screen and (max-width: 767px){
+    .card-columns {
+        column-count: 1 !important;
+    }
+    .content-search{
+        display: none;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 1090px){
+    .card-columns {
+        column-count: 2 !important;
+    }
+}
+.button-add{
+    position: fixed;
+    top: 89%;
+    right: 5%;
+    z-index: 1000;        
+    padding: 15px 21px 0px;
+    border-radius: 34px !important;
+    width: 65px;
+    height: 63px;        
+    font-size: 25px;
+    box-shadow: -2px 12px 24px -1px rgba(175,188,214,1) !important;
+}
+@media only screen and (min-width: 722px){
+    .button-add{        
+        top: 82%;
+        right: 3%;       
+    }
+}
+.text-grey-light-cla a:hover{
+    color: #7f8c8d;
+    text-decoration: none;
+}
